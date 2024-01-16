@@ -309,14 +309,14 @@ const employees = [
 */
 
 function employeeUpdater(){
-  for (const values in employees) {
-    if (employees.firstName = "Theo") {
-      delete firstName.employees
-    } else if (employees.firstName = "Lorie") {
-      employees.department = "HR"
+  for (const value in employees) {
+    if (employees[value].firstName === "Theo") {
+      delete employees[value];
+    } else if (employees[value].firstName === "Lorie") {
+      employees[value].department = "HR"
     }
   }
-  return employeeUpdater
+  return employees
 }
 
 /// ////////////// PROBLEM 16 ///////////////////
@@ -343,9 +343,10 @@ const cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
-let grumpyActivity;
-let fluffy2ndFriend;
+
+let grumpyActivity = cat.catFriends[0].activities[1]
+let fluffy2ndFriend = cat.catFriends[1].name
+
 
 /// ////////////// PROBLEM 17 ///////////////////
 
@@ -383,7 +384,11 @@ const myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(){
+  for (i = 0; i < myCar.accidents.length; i++) {
+    myCar.accidents[i].atFaultForAccident = false 
+  }
+}
 
 /// ////////////// PROBLEM 18 ///////////////////
 
@@ -401,7 +406,9 @@ const myCar = {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
+function largeNumbers({first, second, third}){
+  return Math.min(first, second, third);
+}
 
 /// ////////////// PROBLEM 19 ///////////////////
 
@@ -411,4 +418,15 @@ const myCar = {
   Find the longest array and return that array.
 */
 
-//Code Here
+function numberGroups({a, b, c}){
+  const maxLength = Math.max(a.length, b.length, c.length);
+
+  if (maxLength === a.length) {
+    return a
+  } else if (maxLength === b.length) {
+    return b
+  } else {
+    return c
+  }
+  
+}
